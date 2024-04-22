@@ -1,0 +1,186 @@
+<!-- <div class="register">
+    <h1>Register</h1>
+    <i mat-dialog-close class="fa-regular fa-circle-xmark"></i>
+</div> -->
+
+
+<!-- <div mat-dialog-content>
+    <form [formGroup]="reactiveForm">
+        <div class="container">
+            <div class="division">
+                <div class="image">
+                    <img *ngIf="imageUrl" [src]="imageUrl" />
+                    <input type="file" id="file" (change)="handleFileInput($event)" style="display: none;"
+                        class="photo" />
+                    <label for="file">upload your photo</label>
+                </div>
+
+                <div class="formdata">
+                    <div class="input">
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="name">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="lastname">
+                        </mat-form-field>
+                    </div>
+
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <input matInput placeholder="lastname">
+                    </mat-form-field>
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <input matInput placeholder="lastname">
+                    </mat-form-field>
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <input matInput placeholder="lastname">
+                    </mat-form-field>
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <input matInput placeholder="lastname">
+                    </mat-form-field>
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <input matInput placeholder="lastname">
+                    </mat-form-field>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </form>
+
+</div> -->
+
+<div class="register">
+    <h2>Register</h2>
+    <div mat-dialog-close><i class="fa-solid fa-circle-xmark"></i></div>
+</div>
+
+
+<div mat-dialog-content>
+    <form [formGroup]="reactiveForm" (ngSubmit)="subForm()">
+        <div class="formdata">
+            <div class="img" *ngIf="!imgValid">
+                <img [src]="imageUrl">
+                <input type="file" id="file" (change)="handleFileInput($event)" style="display: none;" class="photo" />
+                <label for="file">Upload Your Photo</label> <br>
+                <span *ngIf="imgValid" style="color: red; font-size: 12px;">* size should be less <br> than 310*325
+                    pixel</span>
+            </div>
+
+            <div class="img" *ngIf="imgValid">
+                <img [src]="imagee">
+                <input type="file" id="file" (change)="handleFileInput($event)" style="display: none;" class="photo" />
+                <label for="file">Upload Your Photo</label> <br>
+            </div>
+
+            <div class="inputdata">
+                <div class="xyz">
+                    <div style="display: flex; flex-direction: column;">
+
+                        <mat-form-field appearance="outline" class="ab">
+                            <input formControlName="name" #names matInput placeholder="First Name*" maxlength="20">
+                        </mat-form-field>
+                        
+                        <span *ngIf="name && name.invalid && name.touched " class="require">*This field is require</span>
+                    </div>
+
+                    <div>
+                        <mat-form-field appearance="outline" class="ab">
+                            <input formControlName="lastname" matInput placeholder="Last Name*">
+                        </mat-form-field>
+                        <!-- <span *ngIf="lastname && lastname.invalid " class="require">*This field is require</span> -->
+                    </div>
+                </div>
+
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="email" placeholder="Email" type="email">
+                </mat-form-field>
+                <span *ngIf="email && email.invalid"></span>
+
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="mobile" placeholder="(541)754-3010" type="number">
+                </mat-form-field>
+                <span *ngIf="mobile && mobile.invalid"></span>
+
+                <div class="slide">
+                    <label for="" style="margin-right: 10px;">Age:</label>
+                    <mat-slider min="20" max="60" step="1" showTickMarks discrete [displayWith]="formatLabel">
+                        <input formControlName="age" matSliderThumb>
+                    </mat-slider>
+                </div>
+
+                <mat-form-field appearance="outline">
+                    <mat-select formControlName="state" placeholder="State">
+                        <mat-option value="maharashtra">Maharashtra</mat-option>
+                        <mat-option value="Gujrat">Telangana</mat-option>
+                        <mat-option value="Madhya pradesh">Andhra Pradesh</mat-option>
+                        <mat-option value="Karnataka">Karnataka</mat-option>
+                        <mat-option value="Keral">Kerala</mat-option>
+                        <mat-option value="Panjab">Goa</mat-option>
+                        <mat-option value="Rajasthan">Rajasthan</mat-option>
+                        <mat-option value="Rajasthan">Madhya Pradesh</mat-option>
+                        <mat-option value="Rajasthan">Assam</mat-option>
+                        <mat-option value="Rajasthan">Uttar Pradesh</mat-option>
+                        <mat-option value="Rajasthan">Delhi Ncr</mat-option>
+                        <mat-option value="Other">Other</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-select formControlName="country" placeholder="Country">
+                        <mat-option value="India">India</mat-option>
+                        <mat-option value="England">England</mat-option>
+                        <mat-option value="USA">USA</mat-option>
+                        <mat-option value="Canada">Canada</mat-option>
+                        <mat-option value="New Zealand">New Zealand</mat-option>
+                        <mat-option value="Other">Other</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-select formControlName="address" placeholder="Address">
+                        <mat-option value="">
+                            <mat-select placeholder="Home">
+                                <mat-option value="Address1">Address1</mat-option>
+                                <mat-option value="Address2">Address2</mat-option>
+                            </mat-select>
+                        </mat-option>
+                        <mat-option value="">
+                            <mat-select placeholder="Company">
+                                <mat-option value="Company Address1">Company Address1</mat-option>
+                                <mat-option value="Company Address2">Company Address2</mat-option>
+                            </mat-select>
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <input formControlName="tags" matInput placeholder="tags" type="text" #int
+                        (blur)="intrest(int.value)">
+                </mat-form-field>
+
+                <div style="display: flex; width: 22vw; flex-wrap: wrap;">
+                    <div *ngFor="let d of feildintrest" class="span">
+                        <span>{{d.data}}</span>
+
+                        <span (click)="cross(d.id)"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                </div>
+
+                <div style="margin-right: 150px;">
+                    <input type="checkbox" id="sub" formControlName="checked">
+                    <label for="sub">Subscribe to newsletter</label>
+                </div>
+
+            </div>
+        </div>
+
+        <div mat-dialog-actions align="end">
+            <button mat-raised-button mat-dialog-close >Cancel</button>
+            <button mat-raised-button style="background-color:#1577ff; color: white; cursor: pointer;" [disabled]="reactiveForm.invalid" >Submit</button>
+        </div>
+    </form>
+</div>

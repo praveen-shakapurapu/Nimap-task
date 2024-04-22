@@ -1,0 +1,120 @@
+ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  .nav{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    background-color: #3b8dff;
+    color: white;
+  }
+  li{
+    margin-right: 20px;
+    }
+    li a{
+      padding-top: 8px;
+    }
+    li:hover{
+      color: black;
+    }
+    li a:hover{
+      cursor: pointer;
+      border-top: 5px solid #0956fb;
+      }
+  h2{
+    background-color: #0080ff;
+    border-radius: 3px;
+    color: black;
+    margin: 0;
+    padding: 5px ;
+  }
+  
+  .section{
+    height: 600px;
+    width: 65vw;
+    margin: auto;
+    padding-top: 100px;
+  }
+  .data{
+    display: flex;
+  }
+  .img{
+    text-align: center;
+    width: 120%;
+  }
+  .img img{
+    height: 200px;
+    width: 200px;
+    margin-right: 50px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin-bottom: 20px;
+  }
+  .content{
+    /* width: 90%; */
+    margin-left: 70px;
+    display: flex;
+  }
+  p{
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .span1{
+    color: #0956fb;
+    font-weight: 500;
+    font-size: 18px;
+    display: block;
+    text-align: start;
+    margin-left: 100px;
+  }
+  .span{
+    background-color: goldenrod;
+    padding: 8px 5px;
+    margin: 5px;
+    border-radius: 3px;
+    border-bottom: 2px solid red;
+    cursor: pointer;
+  
+  }
+  a{
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .xyz{
+    font-size: 18px;
+    color: red;
+  }
+  .xy{
+    font-size: 18px;
+    color: #1577ff;
+  }
+  
+  .section3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 170px;
+    color: white;
+    background-color: #08171f;
+  }
+  
+  #email{
+    padding: 10px 35px 10px 13px ;
+    width: 20vw;
+    background-color: #08171f;
+    border:2px solid #1577ff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .fa-envelope{
+    position: relative;
+    left: 8.8vw;
+    bottom: 30px;
+  }

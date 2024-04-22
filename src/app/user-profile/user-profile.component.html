@@ -1,0 +1,56 @@
+<div class="nav">
+  <h2>DEMO APP</h2>
+  <ul>
+    <li><a>HOME</a></li>
+    <li><a>ABOUT US</a></li>
+    <li><a>JOBS</a></li>
+    <li><a>CLIENTS</a></li>
+    <li><a>EMPLOYERS</a></li>
+    <li><a>CONTACT US</a></li>
+  </ul>
+</div>
+
+<div class="section">
+
+  <div>
+    <h6 class="span1">Profile</h6>
+    <div class="content">
+      <div class="img">
+
+        <div class="img">
+          <img [src]="currentUser?.image">
+          <input type="file" id="file" style="display:none;" (change)="onImageChange($event)" class="photo">
+        </div>
+
+        <label class="span" for="file" *ngIf="!flag">Edit Photo</label>
+        <label class="span"  *ngIf="flag" (click)="updatePhotos()">Update</label>
+        <label class="span"  *ngIf="flag" (click)="cancel()">Cancel</label>
+        <!-- <span class="span" (click)="openDialog()">Edit Profile</span> -->
+        <button class="span" (click)="openDialog()"> Edit Profile</button>
+      </div>
+      <div>
+        <p>I'm <span class="xyz">{{currentUser?.name}} {{currentUser?.lastname}}</span> and im above <span
+            class="xy">{{currentUser?.age}}
+          </span> years and you can send your emails to <span class="xy">{{currentUser?.email}}</span>. I live in the
+          Country
+          <span class="xy">{{currentUser?.country}}</span> and state of <span class="xy">{{currentUser?.state}}</span>
+          please
+          send me
+          newsletters. Please reach out to me on my phone number. Contact me on this Number <span
+            class="xy">{{currentUser?.mobile}}</span>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+          consequatur
+        </p>
+        <button type="button" class="btn btn-success">I Agree</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="section3">
+  <p style="font-size: 16px;">Subscribe to our job Seeker Mailing List</p>
+  <input type="text" placeholder="Enter Your Email Address" id="email"><i class="fa-solid fa-envelope"></i>
+</div>
+
+

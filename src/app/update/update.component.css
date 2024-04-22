@@ -1,0 +1,86 @@
+.register{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1577ff;
+    color: white;
+    padding: 10px 15px;
+    }
+    h2{
+      margin: 0;
+    }
+    .fa-circle-xmark{
+      color: lightblue;
+    }
+  
+    .img input{
+      height: 160px;
+      width: 150px;
+      background-color: #80808024;
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .photo{
+      color: #1577ff;
+      font-size: 14px;
+      padding-left: 12px;
+    }
+  
+    .formdata{
+      display: flex;
+    }
+    .xyz{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .inputdata{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .ab{
+      margin: 4px;
+      width: 13.3vw;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    mat-form-field{
+      width: 27vw;
+    }
+    .require{
+      color: red;
+      position:  relative;
+      top: -27px;
+      font-size: 13px;
+    }
+    .slide{
+      display: flex;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+  
+    mat-slider {
+      width: 18vw;
+    }
+  
+    .span{
+      background-color: gray;
+      color: white;
+      padding: 3px 8px 3px 6px;
+      border-radius: 3px;
+      margin: 5px;
+    }
+    .fa-xmark{
+      color: goldenrod;
+      margin-left: 15px;
+    }
+  
+    img{
+      width: 150px;
+      height: 150px;
+    }
